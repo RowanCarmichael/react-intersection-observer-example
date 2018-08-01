@@ -1,0 +1,164 @@
+.app {
+  background: #222;
+  color: whitesmoke;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 40px;
+  border-bottom: solid;
+  text-align: center;
+  padding-bottom: 12px;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 18px;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  font-size: 14px;
+  color: darkgrey;
+}
+
+.post {
+  display: flex;
+  animation: fade-in 0.6s;
+  margin-bottom: 12px;
+}
+
+.postDetails {
+  margin: 0 12px;
+}
+
+.score {
+  width: 70px;
+  max-height: 100px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 16px;
+}
+
+.score::before {
+  content: "▲";
+  position: absolute;
+  transform: translateY(-18px);
+  color: darkgray;
+}
+
+.score::after {
+  content: "▼";
+  position: absolute;
+  transform: translateY(18px);
+  color: grey;
+}
+
+.inline {
+  display: inline;
+}
+
+.thumbnail {
+  width: 100px;
+  object-fit: scale-down;
+  object-position: top;
+  border-radius: 4px;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.blankThumbnail {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: darkgrey;
+}
+
+.loaderContainer {
+  width: 100%;
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.loader,
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  animation-fill-mode: both;
+  animation: loading 1.4s infinite ease-in-out;
+}
+
+.loader {
+  color: lightgrey;
+  font-size: 10px;
+  margin: 22px auto;
+  display: grid;
+  position: relative;
+  animation-delay: -0.16s;
+}
+
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+
+.loader:before {
+  left: -35px;
+  animation-delay: -0.32s;
+}
+
+.loader:after {
+  left: 35px;
+}
+
+@-webkit-keyframes loading {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 25px 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 25px 0 0;
+  }
+}
+
+@keyframes loading {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 25px 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 25px 0 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
